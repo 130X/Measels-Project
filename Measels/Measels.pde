@@ -1,4 +1,4 @@
-//Global Variables
+bro //Global Variables
 Float appWidth, appHeight;
 float faceX, faceY, faceDiameter; 
 float  backgroundX, backgroundY, backgroundWidth, backgroundHeight; 
