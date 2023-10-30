@@ -1,9 +1,10 @@
-bro //Global Variables
+//Global Variables
 Float appWidth, appHeight;
 float faceX, faceY, faceDiameter; 
 float  backgroundX, backgroundY, backgroundWidth, backgroundHeight; 
-float..
-float
+float leftEyeX, leftEyeX, rightEyeX, rightEyeY, eyeDimater; 
+float noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
+float mouthX1, mouthY1, mouthX2, mouthY2;
 //
 void setup() {
   fullScreen;
@@ -20,7 +21,13 @@ void setup() {
     backgroundY = faceY - faceDiameter*1/2; 
     backgroundHeight = faceDiameter;  
     backgroundWidth = faceDiameter;       
-    
+    leftEyeX = ;
+    leftEyeY = ;
+    eyedimater = ; 
+    rightEye = ; 
+    rightEye = ; 
+    noseX1 = ; 
+    noseY1 = 
     
     
     
