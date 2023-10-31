@@ -26,20 +26,17 @@ void setup() {
     eyeDimater = smallerDimension*1/20; 
     rightEyeX =  smallerDimension; 
     rightEyeY =  smallerDimension; 
-    noseX1 =  smallerDimension; 
-    noseY1 =  smallerDimension;
-    mouthX1 = smallerDimension;
-    mouthY1 = smallerDimension; 
-    mouthX2 = ;
+    noseX1 =  ; 
+    noseY1 =  ;
+    mouthX1 = ;
+    mouthY1 = ; 
+    mouthX2 = noseX3;
     mouthY2 = ;
     mouthopen = ; 
     mouthReset = ; 
-    
- 
- 
- 
- 
- 
+    measleX= ; 
+    measle = ;
+    measleDiameter = ;
     //DIVs
     ellipse( faceX, faceY, faceDiameter, faceDiameter) ; 
     //4 Inscribed buttons on the background square not on the circle
@@ -54,8 +51,8 @@ void draw() {
   ellipse( rightEyeX, rightEyeY, eyeDimater, eyeDimater ); //RightEye 
   triangle( noseX1, noseY1, noseX2, noseY2, noseX3, noseY3); //Nose
  strokeWeight(mouthopen);
+ line(mouthX1, mouthY1, mouth, mouth)
  strokeWeight( mouth2)
- strokeWeight()
   );
 } //End draw 
 //
