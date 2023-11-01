@@ -9,10 +9,10 @@ color resetcolour=FFFFFF;
 //
 void setup() {
   fullScreen;
-  appWidth = displayWidth;
+  appWidth = displayWidth;   
   appHeight = displayHeight;
-  int smallerDimension = (appWidth >= appHeight) ? appHeight : appWidth;
-  println("SmallerDimension is", smallerDimension); // started as local variable 
+  smallerDimension = (appWidth >= appHeight) ? appHeight : appWidth;
+  println("Smaller Dimension is", smallerDimension);
   //
   ///Population 
     faceX = appWidth*1/2;  
@@ -23,8 +23,8 @@ void setup() {
     backgroundHeight = faceDiameter;  
     backgroundWidth = faceDiameter;     
     leftEyeX =  faceX+smallerDimension*1/4;
-    leftEyeY =  faceX+smallerDimension*3/4; 
-    eyeDimater = smallerDimension*1/20; 
+    leftEyeY =  faceX+smallerDimension*1/4; 
+    eyeDimater = smallerDimension*1/11; 
     rightEyeX =  backgroundX+smallerDimension*3/4; 
     rightEyeY =  leftEyeY;  
     noseX1 =  faceX; 
@@ -38,18 +38,12 @@ void setup() {
     mouthX2 = noseX3;
     mouthY2 = mouthY1;
     mouthopen = smallerDimension*1/4; 
-    mouthReset = smallerDimension/smallerDimension; //1=reset 
-    measleX = random( 0 appWidth);
-    measleY = random( 0, appHeight);
-    measeDoameter = random(smallerDimension*1/30, smallerDimension*1/10); 
-    //measleX= ; 
-    //measle = ;
-    //measleDiameter = ;
-    //DIVs
-    ellipse( faceX, faceY, faceDiameter, faceDiameter) ; 
-    //4 Inscribed buttons on the background square not on the circle
-    //Solve Isolceles leg length to find rect() and height 
-    //
+    mouthReset = smallerDimension/smallerDimension; 
+   //
+   //DIVs
+    ellipse( faceX, faceY, faceDiameter, faceDiameter ); 
+    rect( backgroundX, backgroundY, smallerDimension/2-sqrt(sq(smallerDimension/2)/2), smallerDimension/2-sqrt( sq(smallerDimension/2)/2) );
+    println(backgroundX, smallerDimension, smallerDimension/2, sq(smallerDimension/2), sq(smallerDimension/2) /2, sqrt(sq( smallerDimension/2 ) /2 ), smallerDimension/-sqrt(sq(smallerDimension/2)/2) ); 
 } // End setup
 //
 void draw() {
