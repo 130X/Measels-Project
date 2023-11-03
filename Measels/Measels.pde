@@ -43,12 +43,13 @@ void setup() {
     mouthReset = smallerDimension/smallerDimension; 
    //
    //DIVs
+   rect( backgroundX, backgroundY, backgroundWidth, backgroundHeight );
     ellipse( faceX, faceY, faceDiameter, faceDiameter ); 
-    buttom1X = backgroundX:
+    button1X = backgroundX;
     button1Y = backgroundY; 
     buttonSide =  smallerDimension/2-sqrt(sq(smallerDimension/2)/2);
     
-    rect( button1X, button1Y, buttonSide, buttonSide  smallerDimension/2-sqrt(sq(smallerDimension/2)/2), smallerDimension/2-sqrt( sq(smallerDimension/2)/2) );
+    rect( button1X, button1Y, buttonSide, buttonSide );
     println(backgroundX, smallerDimension, smallerDimension/2, sq(smallerDimension/2), sq(smallerDimension/2) /2, sqrt(sq( smallerDimension/2 ) /2 ), smallerDimension/-sqrt(sq(smallerDimension/2)/2) ); 
 } // End setup
 //
@@ -59,7 +60,7 @@ void draw() {
   ellipse( rightEyeX, rightEyeY, eyeDimater, eyeDimater ); //RightEye 
   triangle( noseX1, noseY1, noseX2, noseY2, noseX3, noseY3); //Nose
   strokeWeight(mouthopen);
-  line(mouthX1, mouthY1, mouth, mouth);
+  line(mouthX1, mouthY1, mouthX2, mouthX2);
   strokeWeight( mouthReset);
  //
    color measleColour = color( 255, random(0,84), random( 0,103) );
