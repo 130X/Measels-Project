@@ -1,19 +1,18 @@
-//global variables 
+//Global variables 
 int  appWidth, appHeight, smallerDimension; 
 float faceX, faceY, faceDiameter; 
-float  backgroundX, backgroundY, backgroundWidth, backgroundHeight; 
+float backgroundX, backgroundY, backgroundWidth, backgroundHeight; 
 float leftEyeX, leftEyeY, rightEyeX, rightEyeY, eyeDimater; 
 float noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
-float mouth, mouthX1, mouthY1, mouthX2, mouthY2, mouthopen, mouthReset;
+float mouthX1, mouthY1, mouthX2, mouthY2, mouthopen, mouthReset;
 float measleX, measleY, measleDiameter; 
 float button1X, button1Y, buttonSide; 
 color resetColour=#FFFFFF;
 //
 void setup() {
-  size(1200,1000);
-  appWidth = displayWidth;   
-  appHeight = displayHeight;
-  //Ternary Operator
+  size(700,500);
+  appWidth = width;   
+  appHeight = height;
   smallerDimension = (appWidth >= appHeight) ? appHeight : appWidth;
   println("Smaller Dimension is", smallerDimension);
   //
