@@ -65,9 +65,9 @@ void draw() {
  //
    color measleColour = color( 255, random(0,84), random( 0,103) );
    fill(measleColour);
+    measleDiameter = random( smallerDimension*1/100, smallerDimension*1/30 ); 
   measleX = random( backgroundX, backgroundX+backgroundWidth );  
   measleY = random( backgroundY, backgroundY+backgroundWidth );
-   measleDiameter = random( smallerDimension*1/100, smallerDimension*1/30 ); 
   noStroke();
   ellipse( measleX, measleY, measleDiameter, measleDiameter );
   stroke(1);
