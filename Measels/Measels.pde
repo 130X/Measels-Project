@@ -1,15 +1,15 @@
-//Global Variables
-int  appWidth, appHeight, smallerDimension;
+//global variables 
+int  appWidth, appHeight, smallerDimension; 
 float faceX, faceY, faceDiameter; 
 float  backgroundX, backgroundY, backgroundWidth, backgroundHeight; 
 float leftEyeX, leftEyeY, rightEyeX, rightEyeY, eyeDimater; 
 float noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
-float mouthX1, mouthY1, mouthX2, mouthY2, mouthopen, mouthReset;
-float measleX, measleY measleDiameter; 
+float mouth, mouthX1, mouthY1, mouthX2, mouthY2, mouthopen, mouthReset;
+float measleX, measleY, measleDiameter; 
 color resetColour=#FFFFFF;
 //
 void setup() {
-  fullScreen;
+  size(800,600);
   appWidth = displayWidth;   
   appHeight = displayHeight;
   //Ternary Operator
@@ -56,17 +56,17 @@ void draw() {
   triangle( noseX1, noseY1, noseX2, noseY2, noseX3, noseY3); //Nose
   strokeWeight(mouthopen);
   line(mouthX1, mouthY1, mouth, mouth);
-  strokeWeight( mouth2);
+  strokeWeight( mouthReset);
  //
- color measleColour = color( 255, random(0,84), random( 0,103) );
- fill(measleColour);
- measleX = random( 0, appWidth );
- measleY = random( 0, appHeight );
- measleDiameter = random( smallerDimension*1/100, smallerDimension*1/30); 
- noStroke();
- ellipse( measleX, measleY, measledDiameter ); 
- stroke(1); //default is 1
- fill(resetColour);
+   color measleColour = color( 255, random(0,84), random( 0,103) );
+   fill(measleColour);
+   measleX = random( 0, appWidth );
+  measleY = random( 0, appHeight );
+   measleDiameter = random( smallerDimension*1/100, smallerDimension*1/30); 
+  noStroke();
+  ellipse( measleX, measleY, measleDiameter, measleDiameter );
+  stroke(1);
+  fill(resetColour);    
 } //End draw 
 //
 void keyPressed() {} //End keyPressed
