@@ -9,7 +9,7 @@ float measleX, measleY, measleDiameter;
 color resetColour=#FFFFFF;
 //
 void setup() {
-  size(800,600);
+  size(1200,1000);
   appWidth = displayWidth;   
   appHeight = displayHeight;
   //Ternary Operator
@@ -60,9 +60,9 @@ void draw() {
  //
    color measleColour = color( 255, random(0,84), random( 0,103) );
    fill(measleColour);
-   measleX = random( 0, appWidth );
-  measleY = random( 0, appHeight );
-   measleDiameter = random( smallerDimension*1/100, smallerDimension*1/30); 
+  measleX = random( backgroundX, backgroundX+backgroundWidth );  
+  measleY = random( backgroundY, backgroundX+backgroundWidth );
+   measleDiameter = random( smallerDimension*1/100, smallerDimension*1/30 ); 
   noStroke();
   ellipse( measleX, measleY, measleDiameter, measleDiameter );
   stroke(1);
