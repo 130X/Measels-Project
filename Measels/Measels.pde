@@ -4,7 +4,7 @@ float faceX, faceY, faceDiameter;
 float backgroundX, backgroundY, backgroundWidth, backgroundHeight; 
 float leftEyeX, leftEyeY, rightEyeX, rightEyeY, eyeDimater; 
 float noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
-float mouthX1, mouthY1, mouthX2, mouthY2, mouthopen, mouthReset;
+float mouthX1, mouthY1, mouthX2, mouthY2, mouthopen, mouthreset;
 float measleX, measleY, measleDiameter; 
 float button1X, button1Y, buttonSide; 
 color resetColour=#FFFFFF;
@@ -16,16 +16,16 @@ void setup() {
   smallerDimension = (appWidth >= appHeight) ? appHeight : appWidth;
   println("Smaller Dimension is", smallerDimension);
   //
-  ///Population 
+  //Population 
     faceX = appWidth*1/2;  
     faceY = appHeight*1/2; 
     faceDiameter = smallerDimension; 
     backgroundX = faceX - faceDiameter*1/2;
     backgroundY = faceY - faceDiameter*1/2; 
-    backgroundHeight = faceDiameter;  
-    backgroundWidth = faceDiameter;     
-    leftEyeX =  faceX+smallerDimension*1/4;
-    leftEyeY =  faceX+smallerDimension*1/4; 
+    backgroundWidth= faceDiameter;  
+    backgroundHeight = faceDiameter;     
+    leftEyeX = backgroundX+smallerDimension*1/4;
+    leftEyeY = backgroundY+smallerDimension*1/4;
     eyeDimater = smallerDimension*1/11; 
     rightEyeX =  backgroundX+smallerDimension*3/4; 
     rightEyeY =  leftEyeY;  
@@ -40,7 +40,7 @@ void setup() {
     mouthX2 = noseX3;
     mouthY2 = mouthY1;
     mouthopen = smallerDimension*1/4; 
-    mouthReset = smallerDimension/smallerDimension; 
+    mouthreset = smallerDimension/smallerDimension; 
    //
    //DIVs
    rect( backgroundX, backgroundY, backgroundWidth, backgroundHeight );
@@ -57,11 +57,10 @@ void draw() {
   
   ellipse( leftEyeX, leftEyeY, eyeDimater, eyeDimater );
   ellipse( rightEyeX, rightEyeY, eyeDimater, eyeDimater );
-  ellipse( rightEyeX, rightEyeY, eyeDimater, eyeDimater ); 
   triangle( noseX1, noseY1, noseX2, noseY2, noseX3, noseY3); 
   strokeWeight(mouthopen);
   line(mouthX1, mouthY1, mouthX2, mouthX2);
-  strokeWeight( mouthReset);
+  strokeWeight( mouthreset);
  //
    color measleColour = color( 255, random(0,84), random( 0,103) );
    fill(measleColour);
