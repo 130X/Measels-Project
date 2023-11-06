@@ -7,8 +7,9 @@ float noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
 float mouthX1, mouthY1, mouthX2, mouthY2, mouthopen, mouthreset;
 float measleX, measleY, measleDiameter; 
 float button1X, button1Y, button2X, button2Y, button3X, button3Y, buttonSide; 
-color blue=#74BCF5, pine = #149B3B, blackInk=#000000, resetColour=#FFFFFF;
+color Pastelblue=#74BCF5, pineGreen = #149B3B, blackInk=#000000, resetColour=#FFFFFF;
 String start="Start", stop="STOP", quit="close";
+PFont buttonFont; 
 //
 void setup() {
   size(700,500);
@@ -42,6 +43,7 @@ void setup() {
     mouthY2 = mouthY1;
     mouthopen = smallerDimension*1/8; 
     mouthreset = smallerDimension/smallerDimension; 
+    buttonFont = createFont("MalgunGothic-Semilight-48",54); 
    //
    //DIVs
    rect( backgroundX, backgroundY, backgroundWidth, backgroundHeight );
@@ -63,7 +65,7 @@ void draw() {
   fill(purple); //ink
   textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
   //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-  size = 60;
+  int  size = 22;
   textFont(titleFont, size);
   text(Start, button1X, button1Y, buttonSide, buttonSide );
   text(STOP button2X, button2Y, buttonSide, buttonSide );
