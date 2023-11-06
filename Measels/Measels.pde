@@ -8,6 +8,7 @@ float mouthX1, mouthY1, mouthX2, mouthY2, mouthopen, mouthreset;
 float measleX, measleY, measleDiameter; 
 float button1X, button1Y, button2X, button2Y, button3X, button3Y, buttonSide; 
 color resetColour=#FFFFFF;
+String start="Start", stop="STOP", quit="close";
 //
 void setup() {
   size(700,500);
