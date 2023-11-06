@@ -7,7 +7,7 @@ float noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
 float mouthX1, mouthY1, mouthX2, mouthY2, mouthopen, mouthreset;
 float measleX, measleY, measleDiameter; 
 float button1X, button1Y, button2X, button2Y, button3X, button3Y, buttonSide; 
-color Pastelblue=#74BCF5, pineGreen = #149B3B, blackInk=#000000, resetColour=#FFFFFF;
+color Pastelblue=#74BCF5, pineGreen = #149B3B, black=#000000, resetColour=#FFFFFF;
 String start="Start", stop="STOP", quit="close";
 PFont buttonFont; 
 //
@@ -62,14 +62,24 @@ void setup() {
 //
 void draw() {
   //Text Code
-  fill(purple); //ink
+  if ( mouseX>button1X && mouseX<button1X+buttonSide && mouseY>button1Y  && mouseY>button1Y+buttonSide ) { 
+    hoverOverColour = PastelBlue;
+  } else if ( mouseX>button2X &&  mouseX<button2X+buttonSide  && mouseY>button2Y &&  mouseY>button2Y+buttonSide ) { 
+    hoverOverColour = PastelBlue;
+  } else if ( mouseX>button3X && mouseX<button3X+buttonSide && mouseY>button3Y && mouseY>button3Y+buttonSide ) { 
+    hoverOverColour = PineGreen; 
+  } else { 
+    fill( resetColour );
+  }
+  
+  fill(black);
   textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
   //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
   int  size = 22;
-  textFont(titleFont, size);
-  text(Start, button1X, button1Y, buttonSide, buttonSide );
-  text(STOP button2X, button2Y, buttonSide, buttonSide );
-  text(close button3X, button3Y, buttonSide, buttonSide );
+   textFont(buttonFont, size);
+  text( start, button1X, button1Y, buttonSide, buttonSide);
+  text( stop, button2X, button2Y, buttonSide, buttonSide);
+  text( close, button3X, button3Y, buttonSide, buttonSide);
   //
   ellipse( leftEyeX, leftEyeY, eyeDimater, eyeDimater );
   ellipse( rightEyeX, rightEyeY, eyeDimater, eyeDimater );
