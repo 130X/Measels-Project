@@ -7,7 +7,7 @@ float noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
 float mouthX1, mouthY1, mouthX2, mouthY2, mouthopen, mouthreset;
 float measleX, measleY, measleDiameter; 
 float button1X, button1Y, button2X, button2Y, button3X, button3Y, buttonSide; 
-color resetColour=#FFFFFF;
+color blue=#74BCF5, pine = #149B3B, blackInk=#000000, resetColour=#FFFFFF;
 String start="Start", stop="STOP", quit="close";
 //
 void setup() {
@@ -59,7 +59,16 @@ void setup() {
 } // End setup
 //
 void draw() {
-  
+  //Text Code
+  fill(purple); //ink
+  textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  size = 60;
+  textFont(titleFont, size);
+  text(Start, button1X, button1Y, buttonSide, buttonSide );
+  text(STOP button2X, button2Y, buttonSide, buttonSide );
+  text(close button3X, button3Y, buttonSide, buttonSide );
+  //
   ellipse( leftEyeX, leftEyeY, eyeDimater, eyeDimater );
   ellipse( rightEyeX, rightEyeY, eyeDimater, eyeDimater );
   triangle( noseX1, noseY1, noseX2, noseY2, noseX3, noseY3); 
