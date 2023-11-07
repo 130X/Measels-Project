@@ -17,6 +17,7 @@ color Pastelblue=#74BCF5, Pinegreen = #149B3B, black=#000000, resetColour=#FFFFF
 color hoverOverColour=resetColour;
 String start="Start", stop="STOP", quit="X";
 PFont buttonFont; 
+Boolean measlesON=false;
 //
 void setup() {
   size(700,500);
@@ -105,25 +106,23 @@ void draw() {
   //
   //
   //
-  
   noStroke();
-  ellipse( measleX, measleY, measleDiameter, measleDiameter );
-  stroke(1);
+  if ( measlesON==true) ellipse( measleX, measleY, measleDiameter, measleDiameter );
+  //ERROR nee to redraw start of proramstroke(1);
   fill(resetColour);    
 } //End draw 
 //
 void keyPressed() {
-  if (key==' ' ) println("X"); //SPACEB-BAR *press space and the measles start*
-  if (keyCode==BACKSPACE ) println("STOP"); //Stop 
-  if (keyCode==ESC ) println("quit"); 
+  //use println()
+  if (key==' ' ) measlesON=true; //SPACEB-BAR *press space and the measles start*
+  if (keyCode==BACKSPACE ); //Stop 
+  if (keyCode==ESC ); 
 } //End keyPressed
 //
 void mousePressed() {
-  /*
-  if ( mouseX> mouseX< mouseY> mouseY<) println('start'); //START
-  if () println('stop'); //STOP
-  if ( )println('quit'); //QUIT
-  */
+  if (mouseX>button1X && mouseX<button1X+buttonSide && mouseY>button1Y  && mouseY>button1Y+buttonSide) measlesON=true;; 
+  if (mouseX>button2X &&  mouseX<button2X+buttonSide  && mouseY>button2Y &&  mouseY>button2Y+buttonSide) measlesON=true;;
+  if (mouseX>button3X && mouseX<button3X+buttonSide && mouseY>button3Y && mouseY>button3Y+buttonSide ); exit(); 
 } //End mousePressed 
 //
 //End MAIN Program
