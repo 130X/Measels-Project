@@ -107,7 +107,7 @@ void draw() {
   //
   //
   noStroke();
-  if ( measlesON==true) ellipse( measleX, measleY, measleDiameter, measleDiameter );
+  if(measlesON=true) ellipse( measleX, measleY, measleDiameter, measleDiameter );
   //ERROR nee to redraw start of proramstroke(1);
   fill(resetColour);    
 } //End draw 
