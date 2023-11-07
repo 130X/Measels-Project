@@ -1,4 +1,10 @@
-//Global variables 
+/* Measles To Do List
+ - finish to println of button 1-3
+ - Button 1: start measles code, draw face circle once (singleIF with Boolean)
+ - Button 2: Stop drawing measles code
+ - Button 3: Quit with goodbye screen (delay of draw() code)
+ */
+//Global variables
 int  appWidth, appHeight, smallerDimension; 
 float faceX, faceY, faceDiameter; 
 float backgroundX, backgroundY, backgroundWidth, backgroundHeight; 
@@ -8,6 +14,7 @@ float mouthX1, mouthY1, mouthX2, mouthY2, mouthopen, mouthreset;
 float measleX, measleY, measleDiameter; 
 float button1X, button1Y, button2X, button2Y, button3X, button3Y, buttonSide; 
 color Pastelblue=#74BCF5, pineGreen = #149B3B, black=#000000, resetColour=#FFFFFF;
+color hoverOverColour=resetColour;
 String start="Start", stop="STOP", quit="close";
 PFont buttonFont; 
 //
