@@ -10,7 +10,7 @@ float faceX, faceY, faceDiameter;
 float backgroundX, backgroundY, backgroundWidth, backgroundHeight; 
 float leftEyeX, leftEyeY, rightEyeX, rightEyeY, eyeDimater; 
 float noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
-float mouthX1, mouthY1, mouthX2, mouthY2, mouthopen, mouthreset;
+float mouthX1, mouthY1, mouthX2, mouthY2, mouthOpen, mouthReset;
 float measleX, measleY, measleDiameter; 
 float button1X, button1Y, button2X, button2Y, button3X, button3Y, buttonSide; 
 color Pastelblue=#74BCF5, Pinegreen = #149B3B, black=#000000, resetColour=#FFFFFF;
@@ -48,8 +48,8 @@ void setup() {
     mouthY1 = backgroundY+smallerDimension*3/4; 
     mouthX2 = noseX3;
     mouthY2 = mouthY1;
-    mouthopen = smallerDimension*1/8; 
-    mouthreset = smallerDimension/smallerDimension; 
+    mouthOpen = smallerDimension*1/8; 
+    mouthReset = smallerDimension/smallerDimension; 
     buttonFont = createFont("MalgunGothic-Semilight-48",54); 
    //
    //DIVs
@@ -87,14 +87,14 @@ void draw() {
    textFont(buttonFont, size);
   text( start, button1X, button1Y, buttonSide, buttonSide);
   text( stop, button2X, button2Y, buttonSide, buttonSide);
-  text( X, button3X, button3Y, buttonSide, buttonSide);
+  text( quit, button3X, button3Y, buttonSide, buttonSide);
   //
   ellipse( leftEyeX, leftEyeY, eyeDimater, eyeDimater );
   ellipse( rightEyeX, rightEyeY, eyeDimater, eyeDimater );
   triangle( noseX1, noseY1, noseX2, noseY2, noseX3, noseY3); 
-  strokeWeight(mouthopen);
+  strokeWeight(mouthOpen);
   line(mouthX1, mouthY1, mouthX2, mouthX2);
-  strokeWeight( mouthreset);
+  strokeWeight( mouthReset);
  //
    color measleColour = color( 255, random(0,84), random( 0,103) );
    fill(measleColour);
@@ -113,15 +113,17 @@ void draw() {
 } //End draw 
 //
 void keyPressed() {
-  if ( key==CODED && keyCode==SPACE);  //SPACEB-BAR *press space and the measles start*
-  if () ;
-  if ( );
+  if (key==' ' ) println("X"); //SPACEB-BAR *press space and the measles start*
+  if (keyCode==BACKSPACE ) println("STOP"); //Stop 
+  if (keyCode==ESC ) println("quit"); 
 } //End keyPressed
 //
 void mousePressed() {
-  if ( mouseX> mouseX< mouseY> mouseY<); // "to start" 
-  if () ;
-  if ( );
+  /*
+  if ( mouseX> mouseX< mouseY> mouseY<) println('start'); //START
+  if () println('stop'); //STOP
+  if ( )println('quit'); //QUIT
+  */
 } //End mousePressed 
 //
 //End MAIN Program
