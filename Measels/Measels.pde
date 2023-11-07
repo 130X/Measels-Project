@@ -13,9 +13,9 @@ float noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
 float mouthX1, mouthY1, mouthX2, mouthY2, mouthopen, mouthreset;
 float measleX, measleY, measleDiameter; 
 float button1X, button1Y, button2X, button2Y, button3X, button3Y, buttonSide; 
-color Pastelblue=#74BCF5, pineGreen = #149B3B, black=#000000, resetColour=#FFFFFF;
+color Pastelblue=#74BCF5, Pinegreen = #149B3B, black=#000000, resetColour=#FFFFFF;
 color hoverOverColour=resetColour;
-String start="Start", stop="STOP", quit="close";
+String start="Start", stop="STOP", quit="X";
 PFont buttonFont; 
 //
 void setup() {
@@ -69,12 +69,13 @@ void setup() {
 //
 void draw() {
   //Text Code
+  //...An Error? hoveover allowed measles into other buttons make sure he doesnt do it again 
   if ( mouseX>button1X && mouseX<button1X+buttonSide && mouseY>button1Y  && mouseY>button1Y+buttonSide ) { 
-    hoverOverColour = PastelBlue;
+    hoverOverColour = Pastelblue;
   } else if ( mouseX>button2X &&  mouseX<button2X+buttonSide  && mouseY>button2Y &&  mouseY>button2Y+buttonSide ) { 
-    hoverOverColour = PastelBlue;
+    hoverOverColour = Pastelblue;
   } else if ( mouseX>button3X && mouseX<button3X+buttonSide && mouseY>button3Y && mouseY>button3Y+buttonSide ) { 
-    hoverOverColour = PineGreen; 
+    hoverOverColour = Pinegreen; 
   } else { 
     fill( resetColour );
   }
@@ -86,7 +87,7 @@ void draw() {
    textFont(buttonFont, size);
   text( start, button1X, button1Y, buttonSide, buttonSide);
   text( stop, button2X, button2Y, buttonSide, buttonSide);
-  text( close, button3X, button3Y, buttonSide, buttonSide);
+  text( X, button3X, button3Y, buttonSide, buttonSide);
   //
   ellipse( leftEyeX, leftEyeY, eyeDimater, eyeDimater );
   ellipse( rightEyeX, rightEyeY, eyeDimater, eyeDimater );
@@ -111,8 +112,16 @@ void draw() {
   fill(resetColour);    
 } //End draw 
 //
-void keyPressed() {} //End keyPressed
+void keyPressed() {
+  if ( key==CODED && keyCode==SPACE);  //SPACEB-BAR *press space and the measles start*
+  if () ;
+  if ( );
+} //End keyPressed
 //
-void mousePressed() {} //End mousePressed 
+void mousePressed() {
+  if ( mouseX> mouseX< mouseY> mouseY<); // "to start" 
+  if () ;
+  if ( );
+} //End mousePressed 
 //
 //End MAIN Program
