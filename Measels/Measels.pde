@@ -97,12 +97,14 @@ void draw() {
     measleDiameter = random( smallerDimension*1/100, smallerDimension*1/30 ); 
   measleX = random( backgroundX, backgroundX+backgroundWidth );  
   measleY = random( backgroundY, backgroundY+backgroundWidth );
+  while (measleX<= button1X+buttonSide+(measleDiameter/2) && measleY <= button1Y+buttonSide+(measleDiameter/2))
+  {
+      measleX = random(button1X+buttonSide+(measleDiameter/2), (backgroundX+backgroundWidth)-(measleDiameter/2) );
+  }
   noStroke();
-  if ( ((measleX-faceX)*(measleX-faceX))+((measleYfaceY)*(measleYface)) <((faceDiameter/2)*(faceDiameter/2) )) {  //Measle satys inside the circle
-    if (meales ON==true ) ellipse(measleX, measleY, measleDiameter, measleDiameter );
-    
-  } 
-  if(measlesON=true) ellipse( measleX, measleY, measleDiameter, measleDiameter );
+  if ( ((measleX-faceX)*(measleX-faceX))+((measleY+faceY)*(measleY+faceY)) <((faceDiameter/2)*(faceDiameter/2) )) {  //Measle satys inside the circle
+    if ( measlesON==true ) ellipse( measleX, measleY, measleDiameter, measleDiameter );   
+  }
   stroke(1);
   fill(resetColour);    
 } //End draw 
