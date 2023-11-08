@@ -102,13 +102,13 @@ void draw() {
     measleDiameter = random( smallerDimension*1/100, smallerDimension*1/30 ); 
   measleX = random( backgroundX, backgroundX+backgroundWidth );  
   measleY = random( backgroundY, backgroundY+backgroundWidth );
-  println( "start", measleX, measleY, measleDiameter);
-  //
-  //
-  //
   noStroke();
+  if ( ((measleX-faceX)*(measleX-faceX))+((measleYfaceY)*(measleYface)) <((faceDiameter/2)*(faceDiameter/2) )) {  //Measle satys inside the circle
+    if (meales ON==true ) ellipse(measleX, measleY, measleDiameter, measleDiameter );
+    
+  } 
   if(measlesON=true) ellipse( measleX, measleY, measleDiameter, measleDiameter );
-  //ERROR nee to redraw start of proramstroke(1);
+  stroke(1);
   fill(resetColour);    
 } //End draw 
 //
