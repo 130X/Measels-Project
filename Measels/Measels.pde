@@ -1,9 +1,4 @@
-/* Measles To Do List
- - finish to println of button 1-3
- - Button 1: start measles code, draw face circle once (singleIF with Boolean)
- - Button 2: Stop drawing measles code
- - Button 3: Quit with goodbye screen (delay of draw() code)
- */
+//Not Finished
 //Global variables
 int  appWidth, appHeight, smallerDimension; 
 float faceX, faceY, faceDiameter; 
