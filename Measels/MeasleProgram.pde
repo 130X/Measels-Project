@@ -1,4 +1,4 @@
-void measleProgram() {
+void measlesProgram() {
   //Text Code
   //...An Error? hoveover allowed measles into other buttons make sure he doesnt do it again 
 if ( mouseX>button1X && mouseX<button1X+buttonSide && mouseY>button1Y  && mouseY>button1Y+buttonSide ) { 
