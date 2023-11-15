@@ -15,7 +15,7 @@ PFont buttonFont;
 Boolean measlesON=false;
 Boolean
   //
-    void setup() {
+  void setup() {
   size(700, 500);
   appWidth = width;
   appHeight = height;
