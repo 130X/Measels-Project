@@ -13,7 +13,6 @@ color hoverOverColour=resetColour;
 String start="Start", stop="STOP", quit="X";
 PFont buttonFont;
 Boolean measlesON=false;
-Boolean
   //
   void setup() {
   size(700, 500);
@@ -73,9 +72,9 @@ void keyPressed() {
   //use println()
   if (key==' ' ) measlesON=true; //SPACEB-BAR *press space and the measles start*
   if (keyCode==BACKSPACE ); //Stop
-  if (keyCode==ESC );
-} //End keyPressed
-//
+  if (keyCode==ESC ); 
+  //
+} //End keyPressed 
 void mousePressed() {
   splashScreen=true();
   //
