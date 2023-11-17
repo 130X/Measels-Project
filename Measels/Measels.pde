@@ -12,10 +12,10 @@ color Pastelblue=#74BCF5, Pinegreen = #149B3B, black=#000000, resetColour=#FFFFF
 color hoverOverColour=resetColour;
 String start="Start", stop="STOP", quit="X";
 PFont buttonFont;
-Boolean measlesON=false;
+Boolean measlesON=false, splashScreen=false;  
   //
   void setup() {
-  size(700, 500);
+  size(800, 600);
   appWidth = width;
   appHeight = height;
   smallerDimension = (appWidth >= appHeight) ? appHeight : appWidth;
@@ -64,25 +64,23 @@ Boolean measlesON=false;
 } // End setup
 //
 void draw() {
-  background(0);
-  if (splashScreen==true) measleProgram();
+  if ( splashScreen==false ) background(0);
+  if ( splashScreen==false ) measlesProgram();
+  //
 } //End draw //New way to hide code
 //
 void keyPressed() {
-  //use println()
-  if (key==' ' ) measlesON=true; //SPACEB-BAR *press space and the measles start*
-  if (keyCode==BACKSPACE ); //Stop
-  if (keyCode==ESC ); 
-  //
+  /*if (key==' ' ) measlesON=true; 
+  if (keyCode==BACKSPACE ) measlesON=false;
+  if (keyCode==ESC) exit();*/
 } //End keyPressed 
+//
 void mousePressed() {
-  splashScreen=true();
+  splashScreen=true;  
   //
   if (mouseX>button1X && mouseX<button1X+buttonSide && mouseY>button1Y  && mouseY>button1Y+buttonSide) measlesON=true;
-  if (mouseX>button2X &&  mouseX<button2X+buttonSide  && mouseY>button2Y &&  mouseY>button2Y+buttonSide) measlesON=true;
-  ;
-  if (mouseX>button3X && mouseX<button3X+buttonSide && mouseY>button3Y && mouseY>button3Y+buttonSide );
-  exit();
+  if (mouseX>button2X &&  mouseX<button2X+buttonSide  && mouseY>button2Y &&  mouseY>button2Y+buttonSide) measlesON=false;
+  if (mouseX>button3X && mouseX<button3X+buttonSide && mouseY>button3Y && mouseY>button3Y+buttonSide ); exit(); 
 } //End mousePressed
 //
 //End MAIN Program
