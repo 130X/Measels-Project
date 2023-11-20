@@ -11,14 +11,7 @@ float button1X, button1Y, button2X, button2Y, button3X, button3Y, buttonSide;
 color Pastelblue=#74BCF5, Pinegreen = #149B3B, black=#000000, resetColour=#FFFFFF;
 color hoverOverColour=resetColour;
 String start="Start", stop="STOP", quit="X";
-PFont buttonFont;
-Boolean measlesON=false;
-  //
-  //
-  //
-  //
-  //
-  //    
+PFont buttonFont;    
   void setup() {
   size(800, 600);
   appWidth = width;
@@ -61,13 +54,11 @@ Boolean measlesON=false;
   button2Y = button1Y;
   button3X = button2X;
   button3Y = backgroundY+faceDiameter-buttonSide;
-  //buttonSide =  smallerDimension/2-sqrt(sq(smallerDimension/2)/2);
   rect( button1X, button1Y, buttonSide, buttonSide );
   println(backgroundX, smallerDimension, smallerDimension/2, sq( smallerDimension/2 ), sq( smallerDimension/2 ) /2, sqrt( sq( smallerDimension/2 ) /2 ), smallerDimension/2-sqrt(sq(smallerDimension/2)/2) );
 } // End setup
 //
 void draw() {
-<<<<<<< HEAD
   if ( mouseX>button1X && mouseX<button1X+buttonSide && mouseY>button1Y && mouseY<button1Y+buttonSide ) { //Buton 1
     hoverOverColour = Pinegreen;
     fill( hoverOverColour );
@@ -88,7 +79,6 @@ void draw() {
     rect( button2X, button2Y, buttonSide, buttonSide );
     rect( button3X, button3Y, buttonSide, buttonSide );
 }
-=======
   if ( mouseX>button1X && mouseX<button1X+buttonSide && mouseY>button1Y  && mouseY>button1Y+buttonSide ) { 
     hoverOverColour = Pastelblue;
   } else if ( mouseX>button2X &&  mouseX<button2X+buttonSide  && mouseY>button2Y &&  mouseY>button2Y+buttonSide ) { 
@@ -101,7 +91,6 @@ void draw() {
   
   fill(black);
   textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
-  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
   int  size = 22;
    textFont(buttonFont, size);
   text( start, button1X, button1Y, buttonSide, buttonSide);
@@ -130,7 +119,6 @@ void draw() {
   }
   stroke(1);
   fill(resetColour);
->>>>>>> 8790c833ee90248087b857a778c9bf0d49f50742
   //
   fill(black);
   textAlign(CENTER, CENTER); 
@@ -163,7 +151,7 @@ void draw() {
   stroke(1); 
   fill(resetColour);
 }
-//
+//End Draw
 void keyPressed() {
   if (key==' ' ) measlesON=true; 
   if (keyCode==BACKSPACE ) measlesON=false;
