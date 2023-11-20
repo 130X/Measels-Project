@@ -1,4 +1,4 @@
-//Not Finishd
+//Not Finished
 //Global variables
 int  appWidth, appHeight, smallerDimension;
 float faceX, faceY, faceDiameter;
@@ -12,7 +12,7 @@ color Pastelblue=#74BCF5, Pinegreen = #149B3B, black=#000000, resetColour=#FFFFF
 color hoverOverColour=resetColour;
 String start="Start", stop="STOP", quit="X";
 PFont buttonFont;
-Boolean measlesON=false, splashScreen=false;  
+Boolean measlesON=false;
   //
   void setup() {
   size(800, 600);
@@ -24,7 +24,7 @@ Boolean measlesON=false, splashScreen=false;
   //Population
   faceX = appWidth*1/2;
   faceY = appHeight*1/2;
-  faceDiameter = smallerDimension;
+  faceDiameter= smallerDimension;
   backgroundX = faceX - faceDiameter*1/2;
   backgroundY = faceY - faceDiameter*1/2;
   backgroundWidth= faceDiameter;
@@ -60,23 +60,69 @@ Boolean measlesON=false, splashScreen=false;
   //buttonSide =  smallerDimension/2-sqrt(sq(smallerDimension/2)/2);
   rect( button1X, button1Y, buttonSide, buttonSide );
   println(backgroundX, smallerDimension, smallerDimension/2, sq( smallerDimension/2 ), sq( smallerDimension/2 ) /2, sqrt( sq( smallerDimension/2 ) /2 ), smallerDimension/2-sqrt(sq(smallerDimension/2)/2) );
-  //
 } // End setup
 //
 void draw() {
-  if ( splashScreen==false ) background(0);
-  if ( splashScreen==false ) measlesProgram();
+  if ( mouseX>button1X && mouseX<button1X+buttonSide && mouseY>button1Y && mouseY<button1Y+buttonSide ) { //Buton 1
+    hoverOverColour = Pinegreen;
+    fill( hoverOverColour );
+    rect( button1X, button1Y, buttonSide, buttonSide );
+    fill( resetColour );
+} else if ( mouseX>button2X && mouseX<button2X+buttonSide && mouseY>button2Y && mouseY<button2Y+buttonSide ) { //Button 2
+    hoverOverColour = Pinegreen;
+    fill( hoverOverColour );
+    rect( button2X, button2Y, buttonSide, buttonSide );
+} else if ( mouseX>button3X && mouseX<button3X+buttonSide && mouseY>button3Y && mouseY<button3Y+buttonSide ) { //button 3
+    hoverOverColour = Pastelblue;
+    fill( hoverOverColour );
+    rect( button3X, button3Y, buttonSide, buttonSide );
+} else { 
+    hoverOverColour = resetColour;
+    fill( hoverOverColour );
+    rect( button1X, button1Y, buttonSide, buttonSide );
+    rect( button2X, button2Y, buttonSide, buttonSide );
+    rect( button3X, button3Y, buttonSide, buttonSide );
+}
   //
-} //End draw //New way to hide code
+  fill(black);
+  textAlign(CENTER, CENTER); 
+  int size = 21;
+  textFont(buttonFont, size);
+  text( start, button1X, button1Y, buttonSide, buttonSide);
+  text( stop, button2X, button2Y, buttonSide, buttonSide);
+  text( quit, button3X, button3Y, buttonSide, buttonSide);
+  //
+  ellipse ( leftEyeX, leftEyeY, eyeDimater, eyeDimater ); 
+  ellipse ( rightEyeX, rightEyeY, eyeDimater, eyeDimater ); 
+  triangle( noseX1, noseY1, noseX2, noseY2, noseX3, noseY3 ); 
+  strokeWeight(mouthOpen);
+  line( mouthX1, mouthY1, mouthX2, mouthY2 );
+  strokeWeight(mouthReset); 
+  //
+  color measleColour = color( 255, random(0, 84), random(0, 103) );
+  fill(measleColour);
+  measleDiameter = random( smallerDimension*1/100, smallerDimension*1/30 );
+  measleX = random( backgroundX+(measleDiameter/2), (backgroundX+backgroundWidth)-(measleDiameter/2) );
+  measleY = random( backgroundY+(measleDiameter/2), (backgroundY+backgroundHeight)-(measleDiameter/2) );
+  while ( measleX <= button1X+buttonSide+(measleDiameter/2) && measleY <= button1Y+buttonSide+(measleDiameter/2)) {
+    measleX = random( button1X+buttonSide+(measleDiameter/2), (backgroundX+backgroundWidth)-(measleDiameter/2) );
+}
+  noStroke();
+  if ( ((measleX-faceX)*(measleX-faceX))+((measleY-faceY)*(measleY-faceY)) < sq( ((faceDiameter/2)-(measleDiameter/2)) ) ) { 
+    if ( measlesON==true ) ellipse( measleX, measleY, measleDiameter, measleDiameter );
+}
+
+  stroke(1); 
+  fill(resetColour);
+}
 //
 void keyPressed() {
-  /*if (key==' ' ) measlesON=true; 
+  if (key==' ' ) measlesON=true; 
   if (keyCode==BACKSPACE ) measlesON=false;
-  if (keyCode==ESC) exit();*/
+  if (keyCode==ESC) exit();
 } //End keyPressed 
 //
-void mousePressed() {
-  splashScreen=true;  
+void mousePressed() { 
   //
   if (mouseX>button1X && mouseX<button1X+buttonSide && mouseY>button1Y  && mouseY>button1Y+buttonSide) measlesON=true;
   if (mouseX>button2X &&  mouseX<button2X+buttonSide  && mouseY>button2Y &&  mouseY>button2Y+buttonSide) measlesON=false;
