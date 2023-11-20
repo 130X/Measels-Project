@@ -11,7 +11,8 @@ float button1X, button1Y, button2X, button2Y, button3X, button3Y, buttonSide;
 color Pastelblue=#74BCF5, Pinegreen = #149B3B, black=#000000, resetColour=#FFFFFF;
 color hoverOverColour=resetColour;
 String start="Start", stop="STOP", quit="X";
-PFont buttonFont;    
+PFont buttonFont;  
+Boolean measlesON=false;
   void setup() {
   size(800, 600);
   appWidth = width;
@@ -60,69 +61,30 @@ PFont buttonFont;
 } // End setup
 //
 void draw() {
-  if ( mouseX>button1X && mouseX<button1X+buttonSide && mouseY>button1Y && mouseY<button1Y+buttonSide ) { //Buton 1
+  if ( mouseX>button1X && mouseX<button1X+buttonSide && mouseY>button1Y && mouseY<button1Y+buttonSide ) { 
     hoverOverColour = Pinegreen;
     fill( hoverOverColour );
     rect( button1X, button1Y, buttonSide, buttonSide );
     fill( resetColour );
-} else if ( mouseX>button2X && mouseX<button2X+buttonSide && mouseY>button2Y && mouseY<button2Y+buttonSide ) { //Button 2
+  } else if ( mouseX>button2X && mouseX<button2X+buttonSide && mouseY>button2Y && mouseY<button2Y+buttonSide ) { 
     hoverOverColour = Pinegreen;
     fill( hoverOverColour );
     rect( button2X, button2Y, buttonSide, buttonSide );
-} else if ( mouseX>button3X && mouseX<button3X+buttonSide && mouseY>button3Y && mouseY<button3Y+buttonSide ) { //button 3
+  } else if ( mouseX>button3X && mouseX<button3X+buttonSide && mouseY>button3Y && mouseY<button3Y+buttonSide ) { 
     hoverOverColour = Pastelblue;
     fill( hoverOverColour );
     rect( button3X, button3Y, buttonSide, buttonSide );
-} else { 
+  } else {
     hoverOverColour = resetColour;
     fill( hoverOverColour );
     rect( button1X, button1Y, buttonSide, buttonSide );
     rect( button2X, button2Y, buttonSide, buttonSide );
     rect( button3X, button3Y, buttonSide, buttonSide );
-}
-  if ( mouseX>button1X && mouseX<button1X+buttonSide && mouseY>button1Y  && mouseY>button1Y+buttonSide ) { 
-    hoverOverColour = Pastelblue;
-  } else if ( mouseX>button2X &&  mouseX<button2X+buttonSide  && mouseY>button2Y &&  mouseY>button2Y+buttonSide ) { 
-    hoverOverColour = Pastelblue;
-  } else if ( mouseX>button3X && mouseX<button3X+buttonSide && mouseY>button3Y && mouseY>button3Y+buttonSide ) { 
-    hoverOverColour = Pinegreen; 
-  } else { 
-    fill( resetColour );
   }
-  
-  fill(black);
-  textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
-  int  size = 22;
-   textFont(buttonFont, size);
-  text( start, button1X, button1Y, buttonSide, buttonSide);
-  text( stop, button2X, button2Y, buttonSide, buttonSide);
-  text( quit, button3X, button3Y, buttonSide, buttonSide);
-  //
-  ellipse( leftEyeX, leftEyeY, eyeDimater, eyeDimater );
-  ellipse( rightEyeX, rightEyeY, eyeDimater, eyeDimater );
-  triangle( noseX1, noseY1, noseX2, noseY2, noseX3, noseY3); 
-  strokeWeight(mouthOpen);
-  line(mouthX1, mouthY1, mouthX2, mouthX2);
-  strokeWeight( mouthReset);
- //
-   color measleColour = color( 255, random(0,84), random( 0,103) );
-   fill(measleColour);
-    measleDiameter = random( smallerDimension*1/100, smallerDimension*1/30 ); 
-  measleX = random( backgroundX, backgroundX+backgroundWidth );  
-  measleY = random( backgroundY, backgroundY+backgroundWidth );
-  while (measleX<= button1X+buttonSide+(measleDiameter/2) && measleY <= button1Y+buttonSide+(measleDiameter/2))
-  {
-      measleX = random(button1X+buttonSide+(measleDiameter/2), (backgroundX+backgroundWidth)-(measleDiameter/2) );
-  }
-  noStroke();
-  if ( ((measleX-faceX)*(measleX-faceX))+((measleY+faceY)*(measleY+faceY)) <((faceDiameter/2)*(faceDiameter/2) )) {  //Measle satys inside the circle
-    if ( measlesON==true ) ellipse( measleX, measleY, measleDiameter, measleDiameter );   
-  }
-  stroke(1);
-  fill(resetColour);
   //
   fill(black);
   textAlign(CENTER, CENTER); 
+
   int size = 21;
   textFont(buttonFont, size);
   text( start, button1X, button1Y, buttonSide, buttonSide);
@@ -133,7 +95,7 @@ void draw() {
   ellipse ( rightEyeX, rightEyeY, eyeDimater, eyeDimater ); 
   triangle( noseX1, noseY1, noseX2, noseY2, noseX3, noseY3 ); 
   strokeWeight(mouthOpen);
-  line( mouthX1, mouthY1, mouthX2, mouthY2 );
+  line( mouthX1, mouthY1, mouthX2, mouthY2 ); 
   strokeWeight(mouthReset); 
   //
   color measleColour = color( 255, random(0, 84), random(0, 103) );
@@ -143,11 +105,12 @@ void draw() {
   measleY = random( backgroundY+(measleDiameter/2), (backgroundY+backgroundHeight)-(measleDiameter/2) );
   while ( measleX <= button1X+buttonSide+(measleDiameter/2) && measleY <= button1Y+buttonSide+(measleDiameter/2)) {
     measleX = random( button1X+buttonSide+(measleDiameter/2), (backgroundX+backgroundWidth)-(measleDiameter/2) );
-}
+  
+  }
   noStroke();
   if ( ((measleX-faceX)*(measleX-faceX))+((measleY-faceY)*(measleY-faceY)) < sq( ((faceDiameter/2)-(measleDiameter/2)) ) ) { 
     if ( measlesON==true ) ellipse( measleX, measleY, measleDiameter, measleDiameter );
-}
+  } 
 
   stroke(1); 
   fill(resetColour);
