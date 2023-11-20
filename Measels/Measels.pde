@@ -45,6 +45,7 @@ PFont buttonFont;
   mouthReset = smallerDimension/smallerDimension;
   buttonFont = createFont("MalgunGothic-Semilight-48", 54);
   //
+  //
   //DIVs
   rect( backgroundX, backgroundY, backgroundWidth, backgroundHeight );
   ellipse( faceX, faceY, faceDiameter, faceDiameter );
