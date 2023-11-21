@@ -15,7 +15,7 @@ PFont buttonFont;
 Boolean measlesON=false; 
 //
   void setup() {
-  size(800, 600);
+  size(1200, 600);
   appWidth = width;
   appHeight = height;
   smallerDimension = (appWidth >= appHeight) ? appHeight : appWidth;
