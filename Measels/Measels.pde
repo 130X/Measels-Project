@@ -8,7 +8,7 @@ float noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
 float mouthX1, mouthY1, mouthX2, mouthY2, mouthOpen, mouthReset;
 float measleX, measleY, measleDiameter;
 float button1X, button1Y, button2X, button2Y, button3X, button3Y, buttonSide;
-color Pastelblue=#74BCF5, Pinegreen = #149B3B, black=#000000, resetColour=#FFFFFF; 
+color Pastelblue=#74BCF5, Pinegreen = #149B3B, black=#000000, red=#FF0D0D, resetColour=#FFFFFF;
 color hoverOverColour=resetColour;
 String start="Start", stop="Stop", quit="X";
 PFont buttonFont;
@@ -20,7 +20,6 @@ Boolean measlesON=false;
   appHeight = height;
   smallerDimension = (appWidth >= appHeight) ? appHeight : appWidth;
   println("smaller Dimension is", smallerDimension);
-  //
 //Population
   faceX = appWidth*1/2;
   faceY = appHeight*1/2;
@@ -73,7 +72,7 @@ void draw() {
     fill( hoverOverColour );
     rect( button2X, button2Y, buttonSide, buttonSide );
   } else if ( mouseX>button3X && mouseX<button3X+buttonSide && mouseY>button3Y && mouseY<button3Y+buttonSide ) { //button 3
-    hoverOverColour = Pinegreen;
+    hoverOverColour = red;
     fill( hoverOverColour );
     rect( button3X, button3Y, buttonSide, buttonSide );
   } else { //No Buttons
@@ -91,14 +90,14 @@ void draw() {
   text( start, button1X, button1Y, buttonSide, buttonSide);
   text( stop, button2X, button2Y, buttonSide, buttonSide);
   text( quit, button3X, button3Y, buttonSide, buttonSide);
- //face code
+//face code
   ellipse ( leftEyeX, leftEyeY, eyeDimater, eyeDimater ); 
   ellipse ( rightEyeX, rightEyeY, eyeDimater, eyeDimater ); 
   triangle( noseX1, noseY1, noseX2, noseY2, noseX3, noseY3 ); 
   strokeWeight(mouthOpen);
   line( mouthX1, mouthY1, mouthX2, mouthY2 ); 
   strokeWeight(mouthReset); 
-  //measles Code and placement 
+//measles Code and placement 
    color measleColour = color( 255, random(0, 84), random(0, 103) );
   fill(measleColour);
   measleDiameter = random( smallerDimension*1/100, smallerDimension*1/30 );
