@@ -8,7 +8,7 @@ float noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
 float mouthX1, mouthY1, mouthX2, mouthY2, mouthOpen, mouthReset;
 float measleX, measleY, measleDiameter;
 float button1X, button1Y, button2X, button2Y, button3X, button3Y, buttonSide;
-color Pastelblue=#74BCF5, Pinegreen = #149B3B, black=#000000, red=#FF0D0D, resetColour=#FFFFFF;
+color Pastelblue=#EDD029, Pinegreen = #149B3B, black=#000000, red=#FF0D0D, resetColour=#FFFFFF;
 color hoverOverColour=resetColour;
 String start="Start", stop="Stop", quit="X";
 PFont buttonFont;
