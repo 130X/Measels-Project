@@ -1,4 +1,4 @@
-// Measles Project
+//Measles Project
 // 
 //Global variables
 int  appWidth, appHeight, smallerDimension;
