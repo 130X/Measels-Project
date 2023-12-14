@@ -1,6 +1,5 @@
 //Measles Project
-// 
-//
+//  Finishing soon
 //Global variables
 int  appWidth, appHeight, smallerDimension;
 float faceX, faceY, faceDiameter;
