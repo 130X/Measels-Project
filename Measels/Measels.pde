@@ -1,5 +1,4 @@
 //Measles Project
-//  Finishing soon
 //Global variables
 int  appWidth, appHeight, smallerDimension;
 float faceX, faceY, faceDiameter;
@@ -8,7 +7,7 @@ float leftEyeX, leftEyeY, rightEyeX, rightEyeY, eyeDimater;
 float noseX1, noseY1, noseX2, noseY2, noseX3, noseY3;
 float mouthX1, mouthY1, mouthX2, mouthY2, mouthOpen, mouthReset;
 float measleX, measleY, measleDiameter;
-float button1X, button1Y, button2X, button2Y, button3X, button3Y, buttonSide;
+float button1X, button1Y, button2X, button2Y, button3X, button3Y, button4X, button4Y, buttonSide;
 color Pastelblue=#EDD029, Pinegreen = #149B3B, black=#000000, red=#FF0D0D, resetColour=#FFFFFF;
 color hoverOverColour=resetColour;
 String start="Start", stop="Stop", quit="X";
@@ -57,9 +56,12 @@ Boolean measlesON=false;
   button2Y = button1Y;
   button3X = button2X;
   button3Y = backgroundY+faceDiameter-buttonSide;
+  button4X = button1X = buttionSide;
+  button4Y = button1Y;
   rect( button1X, button1Y, buttonSide, buttonSide );
   rect( button2X, button2Y, buttonSide, buttonSide );
   rect( button3X, button3Y, buttonSide, buttonSide );
+  rect( button4X, button4Y, buttonSide, buttonSide );
 } // End setup
 //
 void draw() {
@@ -87,10 +89,17 @@ void draw() {
   fill(black);
   textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
   int size = 21;
+  //Button code  refresh code
   textFont(buttonFont, size);
   text( start, button1X, button1Y, buttonSide, buttonSide);
   text( stop, button2X, button2Y, buttonSide, buttonSide);
-  text( quit, button3X, button3Y, buttonSide, buttonSide);
+  text( quit, button3X, button3Y, buttonSide, buttonSide); 
+  //refresh code
+  if (mouseX > button4X && mouseX < button4X + buttonSide && mouseY > button4Y && mouseY < button4Y + buttonSide) {
+  hoverOverColour = Pastelblue;
+  } else {
+  
+  }
 //face code
   ellipse ( leftEyeX, leftEyeY, eyeDimater, eyeDimater ); 
   ellipse ( rightEyeX, rightEyeY, eyeDimater, eyeDimater ); 
