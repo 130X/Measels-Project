@@ -10,7 +10,7 @@ float measleX, measleY, measleDiameter;
 float button1X, button1Y, button2X, button2Y, button3X, button3Y, button4X, button4Y, buttonSide;
 color Pastelblue=#EDD029, Pinegreen = #149B3B, black=#000000, red=#FF0D0D, resetColour=#FFFFFF;
 color hoverOverColour=resetColour;
-String start="Start", stop="Stop", quit="X";
+String start="Start", stop="Stop", quit="X", refresh="refresh";
 PFont buttonFont;
 Boolean measlesON=false; 
 //
@@ -56,7 +56,7 @@ Boolean measlesON=false;
   button2Y = button1Y;
   button3X = button2X;
   button3Y = backgroundY+faceDiameter-buttonSide;
-  button4X = button1X = buttionSide;
+  button4X = button1X = buttonSide;
   button4Y = button1Y;
   rect( button1X, button1Y, buttonSide, buttonSide );
   rect( button2X, button2Y, buttonSide, buttonSide );
@@ -98,8 +98,15 @@ void draw() {
   if (mouseX > button4X && mouseX < button4X + buttonSide && mouseY > button4Y && mouseY < button4Y + buttonSide) {
   hoverOverColour = Pastelblue;
   } else {
-  
+  hoverOverColour = resetColour;
   }
+  fill(hoverOverColour);
+  rect(button4X, button4Y, buttonSide, buttonSide);
+  //
+  fill(black);
+  textAlign(CENTER, CENTER);
+  textFont(buttonFont, size);
+  text(refresh, button4X, button4Y, buttonSide, buttonSide);
 //face code
   ellipse ( leftEyeX, leftEyeY, eyeDimater, eyeDimater ); 
   ellipse ( rightEyeX, rightEyeY, eyeDimater, eyeDimater ); 
@@ -129,13 +136,14 @@ void keyPressed() {
   if ( key==' ' ) measlesON=true;
   if ( keyCode==BACKSPACE ) measlesON=false;
   if ( keyCode==ESC ) exit();
+  if ( key=='r' ) 
 } //End keyPressed 
 //
 void mousePressed() { 
   if (mouseX>button1X && mouseX<button1X+buttonSide && mouseY>button1Y && mouseY<button1Y+buttonSide) measlesON=true;
   if (mouseX>button2X && mouseX<button2X+buttonSide && mouseY>button2Y && mouseY<button2Y+buttonSide) measlesON=false;
   if (mouseX>button3X && mouseX<button3X+buttonSide && mouseY>button3Y && mouseY<button3Y+buttonSide) exit();
-  
+  if (mouseX>button4X && mouseX<button4X+buttonSide && mouseY>button4Y && mouseY<button4Y+buttonSide); 
 } //End mousePressed
 //
 //End MAIN Program
