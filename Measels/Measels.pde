@@ -10,7 +10,7 @@ float measleX, measleY, measleDiameter;
 float button1X, button1Y, button2X, button2Y, button3X, button3Y, button4X, button4Y, buttonSide;
 color Pastelblue=#EDD029, Pinegreen = #149B3B, black=#000000, red=#FF0D0D, resetColour=#FFFFFF;
 color hoverOverColour=resetColour;
-String start="Start", stop="Stop", quit="X", refresh="refresh";
+String start="Start", stop="Stop", quit="X", refresh="Refresh";
 PFont buttonFont;
 Boolean measlesON=false; 
 //
@@ -45,7 +45,7 @@ Boolean measlesON=false;
   mouthY2 = mouthY1;
   mouthOpen = smallerDimension*1/4;
   mouthReset = smallerDimension/smallerDimension;
-  buttonFont = createFont("harrington", 55);
+  buttonFont = createFont("Algeria", 55);
 //DIVs
   rect( backgroundX, backgroundY, backgroundWidth, backgroundHeight );
   ellipse(faceX, faceY, faceDiameter, faceDiameter );
@@ -65,6 +65,9 @@ Boolean measlesON=false;
 } // End setup
 //
 void draw() {
+  //
+  background(255);
+  //
    if ( mouseX>button1X && mouseX<button1X+buttonSide && mouseY>button1Y && mouseY<button1Y+buttonSide ) { //Buton 1
     hoverOverColour = Pinegreen;
     fill( hoverOverColour );
@@ -136,7 +139,7 @@ void keyPressed() {
   if ( key==' ' ) measlesON=true;
   if ( keyCode==BACKSPACE ) measlesON=false;
   if ( keyCode==ESC ) exit();
-  if ( key=='r' ) 
+  if ( key=='r' ||  key=='R'  ) redraw();
 } //End keyPressed 
 //
 void mousePressed() { 
